@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Arthur Cardozo",
+      "email": "acgordinho@inf.ufpel.edu.br"
+    },
+    {
+      "id": 2,
+      "name": "BeRRnardo",
+      "email": "Bernardo@berunardo.com"
+    },
+    {
+      "name": "sadasd",
+      "email": "",
+      "": "d",
+      "id": 3
+    },
+    {
+      "name": "SD",
+      "email": "",
+      "id": 5
+    },
+    {
+      "name": "asdsadasd]",
+      "email": "",
+      "": "s",
+      "id": 6
+    },
+    {
+      "name": "sadasdasas",
+      "email": "asdsad",
+      "id": 7
+    }
+  ]
+}
