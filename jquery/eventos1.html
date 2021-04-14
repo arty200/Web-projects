@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+    <style>
+        input {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Eventos #01</h1>
+    <div id='posicao'></div>
+    <div id='cliques'>Cliques: 0</div>
+    <input type="text" placeholder="Cor de Background">
+
+    <script>
+        function mostrarPosicaoMouse(e) {
+            $('#posicao').html(`x: ${e.clientX} y: ${e.clientY}`) //Adiciona a posicao do mouse no html
+        }
+        $('body').on('mousemove',mostrarPosicaoMouse) //Registra um evento no jQuery, passando a função como parametro, ela acontece, quando acontecer o evento
+        $('#posicao').mouseover(e => {
+            $('body').off('mousemove',mostrarPosicaoMouse) //Quando o mouse passa sobre a div posicao ele para de registrar a sua posicao
+        })
+        $('#posicao').mouseleave(e => {
+            $('body').mousemove(mostrarPosicaoMouse)
+        })
+        let cliques = 0
+        $('body').click(e => {
+            $('#cliques').html(`Cliques: ${++cliques}`) //Manipula evento de click
+        })
+
+        const backgroundOriginal = $('body').css('background-color')
+        //Neste caso o this é o input
+        $('input').keyup(function(e) { //keyup - mantem constantemente atualizado, keydown - tem o delay de 1 char na atualizacao do valor informado
+                                          //O evento keypress funciona de forma semelhante ao keydown
+                const valor = $(this).val()
+                if(valor.match(/#[\da-fA-F]{3,6}/)){ //Verifica se o valor passado é valido, 3 ou seis caracteres validos
+                    $('body').css('background-color',valor)
+                }else {
+                    $('body').css('background-color',backgroundOriginal)
+                }
+        })
+    </script>
+</body>

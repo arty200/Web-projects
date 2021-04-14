@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #01</h1>
+    <div id='conteudo1'></div>
+    <div id='conteudo2'></div>
+    <div id='conteudo3'></div>
+
+    <script>
+        //Conteudo 1
+        $('#conteudo1').append('<p>1</p>') //Criando um paragrafo na div com o id conteudo1
+        //Conteudo 2
+        const elementos = [
+            $('<li>').append('Arroz'),
+            $('<li>').append('Carne'),
+            $('<li>').append('Batata')
+        ] // Criando um elemento apartir de uma chamada, porem n foram adicionados na DOM
+        const lista = $('<ul><li>Sorvete</li></ul>').prepend(elementos)//Adiciona todos os itens de elementos na ul,o prepend adiciona os elementos antes dos qe ja estavam na lista
+        $('#conteudo2').append(lista)//Coloca a lista para o conteudo 2
+        //Conteudo 3
+        $('#conteudo3').append('<h1>1</h1>,<h1>2</h1>')//Pode se adicionar mais de um elemento por vez, separando-os por virgula
+        $('#conteudo3').html('<h1>123</h1>') //Substitui o conteudo pelo que esta sendo passado
+        $('#conteudo3').text('SEU MERDA') //Coloca o texto diretamnete dentro da div, n interpretando como html
+        //Alterar todos os componentes de uma vez
+        $('div[id]').html('<strong>TODOS</strong>') //Altera todas as divs que possuem id
+    </script>
+</body>
