@@ -1,0 +1,10 @@
+module.exports = {
+    authSecret: 'z1FQQN59H7cZ5FF5_dQxp_TJs3tcpgFl2QhhtsDIoLpKJJz9CoIst_n0cS8kqgD_tqLIEUHy-7voHFqTiWJKxqbyxyj2SNPMQ9UyKCyVdBBKUH7X7hJi929QKngYAIrQBixYGcaOkgfWiHMj13ewL9NLpP9oGG4NPI-D8EHhvBU',
+    db: {
+        host : '127.0.0.1',
+        port: 5432,
+        database: '',
+        user: '',
+        password: ''
+    }
+}
