@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        * {/*Seletor universal, seleciona todo mundo*/
+            color: yellow;
+            background-color: tomato;
+        }
+        .tag{/*Seleciona todos com a classe tag*/
+            color: teal;
+            background-color: violet;
+        }
+        #aprovados { /*Seleciona um determinado id*/
+            color: red;
+            background-color: royalblue;
+        }
+
+        #aninhado > div { /* Dentro do id aninhado, se quer pegar a div interna a ele*/
+            color: saddlebrown;
+            background-color: slateblue;
+        }
+
+        #aninhado section { /* Qualquer decendente de aninhado do tipo section vai ser modificado*/
+            color: white;
+            background-color: indigo;
+        }
+
+        p + ul { /* Seleciona os ul, imediatamente abaixo, que tenham antes alguma tag p */
+            color: khaki;
+            background-color: lime;
+        }
+
+        p ~ ol { /*Seleciona os elementos ol que tenham alguma tag p*/
+            color: maroon;
+            background-color: orchid;
+        }
+        [feira] { /*Procura todos os elementos que tenham o atributo feira*/
+            color: plum;
+            background-color: powderblue;
+        }
+        [feira*=sa] { /*seleciona todos os valores que possuem sa no nome*/
+            color: salmon;
+            background-color: springgreen;
+        }
+        span:nth-child(1) { /*Tag span que seja filho de alguem, o filho deve ser span*/
+            color: tomato;
+            background-color: yellowgreen;
+        }
+
+        section > :nth-child(odd) { /*Seleciona todos os filhos impares*/
+            color: #ffffff;
+            background-color: black;
+        }
+
+        section > span:nth-of-type(2) { /*Segundo elemento dentro da section, que representa um elemento do tipo span */ 
+            color: blue;
+            background-color: cornsilk;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

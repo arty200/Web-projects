@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Altura e Largura</title>
+    <style>
+        html {
+            height: 100%; /*Html abrangendo toda a pagina*/
+        }
+        body {
+            font-size: 40px;
+            height: 100%; /*Pode crescer até o tamanho do html*/
+            background-color: coral;
+            margin: 0;
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+        span, div {
+            width: 50%;
+            height: 50%; /*Nao funciona pois o body nao ocupa por padrao a altura de 100% da pagina*/
+            height: 250px;
+            display: block; /*Ambos podem ter sua altura variavel, o inline nao considera altura e largura*/
+        }
+    </style>
+</head>
+
+<body>
+    <div>Título</div>
+    <span>Subtítulo</span>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #01</title>
+    <style>
+       .unidades-absolutas { /*Nao muda de acordo com o viewport, sempre o mesmo tamanho*/
+            position: absolute;
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px black;
+            margin: 20px;
+            width: 4cm;
+            height: 20mm;
+            top: 150px;
+            left: 200px;
+       }
+       .unidades-relativas {/*Muda de acordo com o tamanho do viewport*/
+           position: absolute;
+           font-size: 4em;
+           padding: 5%;
+           border: solid 1vw black;/*1/100 da largura total da tela*/
+           margin: .8%;
+           width: 20vw;/*Largura de acordo com o view port*/
+           height: 15vh;
+           bottom: 5%;
+           top: 5%;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="unidades-absolutas">Opa!</div>
+    <div class="unidades-relativas">Epa!</div>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #02</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+        .flex-container div {
+            box-sizing: border-box;
+        }
+        .flex-container {
+            display: flex;/*Do tipo row*/
+            height: 300px;
+            width: 600px;
+        }
+        .flex-container div:nth-child(3){
+            background-color: indianred;
+            order: 1; /*O item passa a ter maior ordem que os outros que possuem ordem 0 por default, exibido por ultimo*/
+            order: 0;/*Mesma ordem dos outros elementos,exibido na posicao padrao*/
+            order: -1;/*Ser mostrado antes*/
+
+            align-self: center; /*Centralisar elemento*/
+            align-self: flex-end;/*Vai para o final, se usar flex-start ele vai para o inicio*/
+            align-self: stretch;/*volta para a posicao padrao*/
+        }
+
+        .flex-container div {
+            width: 100px;
+            flex-grow: 0;/*Os elementos nao crescem*/
+            flex-grow: 1;/*Todos crescem de forma igual*/
+        }
+
+        .flex-container div:nth-child(1) { /*Pega o primeiro elemento isntanciado no html*/
+            flex-grow: 2;/*Coloca um crecimento maior no 1*/
+        }
+
+        .flex-container {
+            width: 300px;
+            flex-shrink: 1;/*Encolher os elementos de forma equivalente*/
+        }
+
+        .flex-container div:nth-child(1){
+            flex-shrink:5;/*Ele vai encolher bem mais que os outros elementos*/
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="flex-container tag nolabel">
+        <div class="tag nolabel">1</div>
+        <div class="tag nolabel">2</div>
+        <div class="tag nolabel">3</div>
+        <div class="tag nolabel">4</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

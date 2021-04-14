@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #02</title>
+    <style>
+        .fora {
+            position:relative;
+            background-color: orange;
+            height: 400px;
+            width: 400px;
+            padding: 50px;
+        }
+        .dentro {
+            background-color: orchid;
+            height: 100px;
+            width: 100%;
+            position: static;/*conteudo = baseia-se no tamanho da div fora*/
+            position: relative;/*conteudo*/
+            position: absolute; /*Conteudo + padding = baseia-se no tamanho da div fora + o seu padding*/
+            position: fixed;/*Ele usa o tamanho do viewport*/
+        }
+    </style>
+</head>
+<body>
+    <div class="fora">
+        <div class="dentro"></div><!--A aultura da div é a altura do seu conteudo*/-->
+    </div>
+</body>
+</html>

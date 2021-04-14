@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #01</title>
+    <style>
+        /* https://caniuse.com/#feat=css-grid */
+        
+        html,
+        body {
+            margin: 20px;
+            height: calc(100% - 40px);
+            background-color: lightgray;
+        }
+        
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border: solid 5px dodgerblue;
+            background: #fff;
+        }
+        body {
+            display: grid;/*Cria grid de forma padrao*/
+            grid-template-columns: 50% 50%; /*Grid com duas colunas*/
+            grid-template-columns: repeat(4, 8.33% 8.33% 8.33%);/*Divide o grid em 12 colunas*/
+            grid-template-columns: repeat(11, 100px) 80px; /*Repeat pode ser utilizado com outras propriedades*/
+            /*minmax(100px,300px) pode ser utilizada para definir os tamanhos dos templates*/
+            grid-template-columns: 200px 20% 1fr;/*Divide em 3 colunas: a primeira com valor fixo, a segunda com uma porcentagem d tamanho total e a terceira pega p resto*/
+            grid-template-columns: 3fr 6fr 3fr;/*Quebra em 12 colunas a largura total, colocando a maior parte no meio*/
+            grid-template-rows: 50% 25% 12.5% 12.5%;/*Coloca tamanhos nas linhas*/
+            grid-template-rows: 100px 1fr;/*O fr vai pegar o maximo de tamanho possivel, enquanto que as linhas 3 e 4 ficam exatamente do tamanho minimo necessario para exibir os valores*/
+            grid-template-rows: 100px auto;/*Pega as 3 linhas restantes e divide o espaço ocupado por elas de forma automatica*/
+
+        }
+
+        .d8{
+            grid-column-start: 2;
+            grid-column-end: 4;/*Vai ocupar o espaco da linha 2 ate a linha 4*/
+            grid-column-end: span 2;/*Faz com que ele ocupe duas casa tedo  mesmo efeito da linhas superior*/
+            grid-row-start: 3;
+            grid-row-end: 5;/*O elemento vai ocupar mais duas casas na proxima linha, tambem pode se utilizar o span para ter o mesmo comportamento*/
+        }
+        /*É possivel ter sobreposicao de celulas*/
+        .d10,.d11 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 5;
+            grid-row-end: span 10;
+        }
+
+        .d10 {
+            z-index: 10; /*Profundidade dos elementos, quanto maior o valor da proriedade z-index mais prioridade o elemento tem em aparecer na tela*/
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="d1">1</div>
+    <div class="d2">2</div>
+    <div class="d3">3</div>
+    <div class="d4">4</div>
+    <div class="d5">5</div>
+    <div class="d6">6</div>
+    <div class="d7">7</div>
+    <div class="d8">8</div>
+    <div class="d9">9</div>
+    <div class="d10">10</div>
+    <div class="d11">11</div>
+    <div class="d12">12</div>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Origem CSS: Externo, Interno e Inline</title>
+    <style>/*O ultimo processado tem preferencia*/
+       body {
+           background-color: aquamarine;
+       }
+    </style>
+    <link rel="stylesheet" href="css/externo.css">
+</head>
+<!--Style tem preferencia sobre TUDO e TODOS-->
+<body style="background-color: bisque;">
+    <h1>E agora?</h1>
+</body>
+
+</html>

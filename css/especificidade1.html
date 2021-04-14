@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /*Qual a ordem de especificidade
+            1.regra com !important - nao recomendado utilizar
+            2.seletores mais especificos (calsse é mais especifica do que a tag p)
+            3.ultima regra processada tem prioridade, sob a regra processada anteriormente
+        */
+        p {
+            background-color: crimson;
+        }
+
+        .observacao {
+            background-color: cyan !important; /*Neste caso n funciona,pois sao propriedades destintas e a propriedade background tem prioridade sobre background color*/
+            border: dashed 5px;
+            padding: 200px;
+            font-size: 40px;
+        }
+
+        p.observacao { /*Seletor mais especifico, independentemente da ordem*/
+            padding: 5px 60px;
+            background: linear-gradient(to right,red,blue);
+        }
+    </style>
+</head>
+
+<body>
+    <p class='observacao'>Olha essa observação!!!!</p>
+</body>
+
+</html>
