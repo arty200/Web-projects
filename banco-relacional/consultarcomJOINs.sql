@@ -1,0 +1,12 @@
+select * from cidades c inner join prefeitos p on c.id = p.cidade_id;
+select *from cidades 
+select * from prefeitos
+
+select * from cidades c inner join prefeitos p on c.id = p.cidade_id;
+select * from cidades c left outer join prefeitos p on c.id = p.cidade_id;
+select * from cidades c right join prefeitos p on c.id = p.cidade_id;
+
+--Simulando o full join
+select * from cidades c left outer join prefeitos p on c.id = p.cidade_id
+union
+select * from cidades c right join prefeitos p on c.id = p.cidade_id;
